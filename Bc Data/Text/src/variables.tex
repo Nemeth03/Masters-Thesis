@@ -1,0 +1,128 @@
+% Use values that are applicable to you and your thesis.
+
+\newif\ifenglish{}
+% \englishtrue{} % english language
+\englishfalse{} % slovak language
+
+\newif\ifbachelor{}
+\bachelortrue{} % bachelor's thesis
+% \bachelorfalse{} % master's thesis
+
+\newif\ifcompsci{}
+\compscitrue{} % computer science
+% \compscifalse{} % bioinformatics
+
+\newif\ifconsultant{}
+% \consultanttrue{} % I have a consultant
+\consultantfalse{} % no consultant
+
+\newif\iflogoFMFI{}
+% \logoFMFItrue{} % display FMFI logo on the cover and the title page
+\logoFMFIfalse{} % no logo
+
+% The year in which you plan to turn the thesis in.
+\newcommand{\thesisyear}{2025}
+
+% Tip - use the `\\` to split a long thesis name nicely.
+\newcommand{\thesisname}{Analýza~interpunkčných~znamienok~v\\rôznojazyčných~textoch}
+
+% If you are writing a master's thesis, don't forget to add Bc. here.
+\newcommand{\thesisauthor}{Zdenko~Németh}
+
+\newcommand{\thesissupervisor}{doc.~RNDr.~Mária~Markošová,~PhD.}
+
+\ifconsultant{}
+    \newcommand{\thesisconsultant}{doc.~RNDr.~Cyril~Fiktívny,~PhD.}
+\fi
+
+\newcommand{\thesisacknowledgments}{
+    V prvom rade by som sa rád poďakoval svojej školiteľke doc. RNDr. Márii Markošovej, PhD., za odborné vedenie a cenné rady počas písania tejto bakalárskej práce. 
+    Ďakujem tiež svojej rodine, priateľom a všetkým, ktorí ma počas celého štúdia podporovali a motivovali.
+}
+
+\newcommand{\thesisabstractsk}{
+    Táto bakalárska práca sa zaoberá analýzou interpunkčných znamienok v rôznojazyčných textoch. Cieľom práce bolo vytvoriť aplikáciu umožňujúcu analyzovať vplyv interpunkcie
+    na štruktúru a vlastnosti slovných sietí. Aplikácia poskytuje používateľovi možnosť výberu textu, jazyka, konkrétnych interpunkčných znamienok a následne vybrať typ analýzy, o ktorú má záujem.
+    Podporuje tri hlavné typy analýz: výpočtovú grafovú a jazykovú analýzu, analýzu distribúcie stupňov vrcholov a analýzu závislosti zmeny exponentu mocninového rozdelenia od počtu vrcholov siete.
+    S ohľadom na komplexnosť výpočtov bola analýza realizovaná na vybraných vzorkách textov, ktoré boli dostačujúce na získanie reprezentatívnych výsledkov. V práci je prezentovaný postup riešenia problematiky, návrh aplikácie
+    a implementácia dôležitých častí, ako aj jej možné vylepšenia a rozšírenia. V závere práce sú zhrnuté hlavné zistenia a navrhnuté ďalšie smery výskumu.
+}
+
+\newcommand{\thesisabstracten}{
+    This bachelor's thesis deals with the analysis of punctuation marks in different language texts. The aim of the thesis was to develop an application that allows analyzing the influence of punctuation marks
+    on the structure and properties of word networks. The application provides the user with the ability to select text, its language, specific punctuation marks and then select the type of analysis they are interested in.
+    It supports three main types of analysis: computational graph and language analysis, degree distribution analysis and the study of how the power-law exponent depends on the number of network nodes.
+    Given the complexity of the calculations, the analysis was carried out on selected samples of texts that were sufficient to obtain representative results. The thesis presents the procedure for solving the problem, the design of the application
+    and the implementation of important parts, as well as its possible improvements and extensions. The main findings are summarized and further research directions are proposed at the end of the thesis.
+}
+
+\newcommand{\thesiskeywordssk}{slovná sieť, analýza textu, interpunkcia, mocninové rozdelenie, grafová analýza, jazyková analýza, NetworkX}
+
+\newcommand{\thesiskeywordsen}{word network, text analysis, punctuation marks, power-law distribution, graph analysis, language analysis, NetworkX}
+
+\newcommand{\thesischapters}{
+    \input chapters/00-uvod.tex
+    \input chapters/10-teoria.tex
+    \input chapters/20-pouziteTechnologie.tex
+    \input chapters/30-tvorbaAplikacie.tex
+    \input chapters/40-analyzaTextov.tex
+    \input chapters/50-zaver.tex
+}
+
+\newcommand{\thesisappendices}{
+    \input chapters/91-appendixA.tex
+}
+
+% Thesis type, field, programme and department are set here automatically, but please check that
+% the values are indeed correct for you.
+% If your supervisor works at FMFI, set the \thesisdepartment to the supervisor's department (this
+% one should also be present in the thesis assignment in AIS). Otherwise, keep the Department of
+% Computer Science.
+\ifenglish{}
+    \ifbachelor{}
+        \newcommand{\thesistype}{Bachelor's Thesis}
+    \else
+        \newcommand{\thesistype}{Master's Thesis}
+    \fi
+    \ifcompsci{}
+        \newcommand{\thesisfield}{Computer Science}
+        \newcommand{\thesisprogramme}{Computer Science}
+    \else
+        \newcommand{\thesisfield}{Computer Science and Biology}
+        \newcommand{\thesisprogramme}{Bioinformatics}
+    \fi
+    \newcommand{\thesisdepartment}{Department of Computer Science}
+    \newcommand{\thesisfaculty}{Faculty of Mathematics, Physics and Informatics}
+    \newcommand{\thesisuniversity}{Comenius University in Bratislava}
+\else
+    \ifbachelor{}
+        \newcommand{\thesistype}{Bakalárska práca}
+    \else
+        \newcommand{\thesistype}{Diplomová práca}
+    \fi
+    \ifcompsci{}
+        \newcommand{\thesisfield}{Informatika}
+        \newcommand{\thesisprogramme}{Aplikovaná Informatika}
+    \else
+        \newcommand{\thesisfield}{Informatika a Biológia}
+        \newcommand{\thesisprogramme}{Bioinformatika}
+    \fi
+    \newcommand{\thesisdepartment}{Katedra aplikovanej informatiky}
+    \newcommand{\thesisfaculty}{Fakulta matematiky, fyziky a informatiky}
+    \newcommand{\thesisuniversity}{Univerzita Komenského v Bratislave}
+\fi
+\newcommand{\thesislocation}{Bratislava}
+
+% Helpers
+
+\newif\ifshowframe{}
+% \showframetrue{} % show page frames to debug positioning
+\showframefalse{} % normal
+
+% EXPERIMENTAL
+% When set to true, tries to omit all images, tables, titles, whitespace, etc.
+% Useful when measuring the actual amount of text written.
+% You might need to run `make -C src clean` beforehand.
+\newif\iftextonly{}
+% \textonlytrue{} % text-only mode
+\textonlyfalse{} % normal

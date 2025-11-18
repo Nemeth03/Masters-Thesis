@@ -1,0 +1,38 @@
+\chapter{Použité technológie}\label{ch:technology}
+
+\section{NetworkX}\label{sec:networkx}
+
+NetworkX je open-source knižnica pre Python, ktorá sa zaoberá tvorbou, manipuláciou a analýzou komplexných sietí a grafov.
+Táto knižnica podporuje všetky druhy grafov, vrátane orientovaných a neorientovaných grafov, vážených a nevážených grafov, ako aj multigrafov \cite{networkx}.
+
+V tejto práci je knižnica NetworkX využitá na základnú grafovú analýzu.
+Na analýzu sietí sú použité rôzne zabudované funkcie, ktoré umožňujú efektívne vypočítať rôzne metriky, ako napríklad stupeň uzlov,
+koeficient zhlukovania, priemernú dĺžku najkratšej cesty, hustotu a priemer siete.
+
+Okrem toho je knižnica využitá aj na generovanie rôznych typov bezškálových sietí, ako sú Barabási-Albertov model a Dorogovtsev-Mendesov model.
+Pre generovanie daných modelov boli použité zabudované funkcie, $nx.barabasi\_albert\_graph()$ a $nx.dorogovtsev\_goltsev\_mendes\_graph()$,
+ktoré umožňujú rýchle, efektívne vytvorenie týchto sietí.
+
+Knižnica NetworkX bola vybraná pre jednoduchosť implementácie, rozsiahlu dokumentáciu a podporu integrácie s inými knižnicami v Pythone, ako sú NumPy a Matplotlib.
+
+Na ukážke \ref{lst:dgm} je zobrazený kód, ktorý generuje Dorogovtsev-Mendesov model za pomoci funkcie $nx.dorogovtsev\_goltsev\_mendes\_graph()$ a následne využije
+funkcie $G.number\_of\_nodes()$ pre výpočet počtu vrcholov, $G.number\_of\_edges()$ pre výpočet počtu hrán, $nx.average\_clustering(G)$ pre výpočet koeficientu zhlukovania a
+$nx.average\_shortest\_path\_length(G)$ pre výpočet priemernej dĺžky najkratšej cesty v grafe.
+
+\clearpage
+
+\begin{lstlisting}[caption={Použitie NetworkX pre generovanie DGM modelu a grafovú analýzu.}, label={lst:dgm}]
+    import networkx as nx
+
+    G = nx.dorogovtsev_goltsev_mendes_graph(5)
+    
+    numNodes = G.number_of_nodes()
+    numEdges = G.number_of_edges()
+    avgClustering = nx.average_clustering(G)
+    avgShortestPath = nx.average_shortest_path_length(G)
+    
+    print(f"Number of nodes: {numNodes}")
+    print(f"Number of edges: {numEdges}")
+    print(f"Average clustering coefficient: {avgClustering}")
+    print(f"Average shortest path length: {avgShortestPath}")
+\end{lstlisting}

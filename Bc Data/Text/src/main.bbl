@@ -1,0 +1,106 @@
+\begin{thebibliography}{10}
+
+\bibitem{diestel2017graph}
+Reinhard Diestel.
+\newblock {\em Graph Theory}.
+\newblock Springer, Berlin, Germany, 5th edition, 2017.
+
+\bibitem{markovsovadynamika}
+Mária Markošová.
+\newblock Dynamika sietí.
+\newblock {\em Umelá inteligencia a kognitívna veda II}, pages 321--379,
+  2010.
+
+\bibitem{barabasi2016network}
+Albert-László Barabási.
+\newblock {\em Network Science}.
+\newblock Cambridge University Press, Cambridge, UK, 2016.
+
+\bibitem{borgatti2006graph}
+Stephen~P Borgatti and Martin~G Everett.
+\newblock A graph-theoretic perspective on centrality.
+\newblock {\em Social networks}, 28(4):466--484, 2006.
+
+\bibitem{erdos1959random}
+A.~Rényi P.~Erdős.
+\newblock On random graphs.
+\newblock {\em I. Publicationes Mathematicae (Debrecen)}, 6:290--297, 1959.
+
+\bibitem{gilbert1959random}
+Edgar~N Gilbert.
+\newblock Random graphs.
+\newblock {\em The Annals of Mathematical Statistics}, 30(4):1141--1144, 1959.
+
+\bibitem{barabasi1999emergence}
+Albert-L{\'a}szl{\'o} Barab{\'a}si and R{\'e}ka Albert.
+\newblock Emergence of scaling in random networks.
+\newblock {\em science}, 286(5439):509--512, 1999.
+
+\bibitem{inproceedings}
+Akhlaq Ahmad, Mohamed~Ridza Wahiddin, Abdur Rahman, Imad Afyouni, Bilal Sadiq,
+  Faizan Rehman, and Sohaib Ghani.
+\newblock Scale free network analysis of a large crowd through their
+  spatio-temporal activities.
+\newblock 12 2015.
+
+\bibitem{dorogovtsev2002evolution}
+Sergey~N Dorogovtsev and José~FF Mendes.
+\newblock Evolution of networks.
+\newblock {\em Advances in Physics}, 51(4):1079--1187, 2002.
+
+\bibitem{motter2002topology}
+Adilson~E Motter, Alessandro~PS De~Moura, Ying-Cheng Lai, and Partha Dasgupta.
+\newblock Topology of the conceptual network of language.
+\newblock {\em Physical Review E}, 65(6):065102, 2002.
+
+\bibitem{dorogovtsev2001language}
+Sergey~N Dorogovtsev and Jos{\'e} Fernando~F Mendes.
+\newblock Language as an evolving word web.
+\newblock {\em Proceedings of the Royal Society of London. Series B: Biological
+  Sciences}, 268(1485):2603--2606, 2001.
+
+\bibitem{cancho2001small}
+Ramon Ferrer~I Cancho and Richard~V Sol{\'e}.
+\newblock The small world of human language.
+\newblock {\em Proceedings of the Royal Society of London. Series B: Biological
+  Sciences}, 268(1482):2261--2265, 2001.
+
+\bibitem{lubis2025mastering}
+Yani Lubis, Fardhan Syahri, Nur~Annisa Ameliya, Zaskia~Amanda Putri, and
+  Ari~Rajasa Tampubolon.
+\newblock Mastering of punctuation marks.
+\newblock {\em Jurnal Penelitian Ilmiah Multidisiplin}, 9(1), 2025.
+
+\bibitem{networkx}
+Aric~A. Hagberg, Daniel~A. Schult, and Pieter~J. Swart.
+\newblock Exploring network structure, dynamics, and function using networkx.
+\newblock In Ga\"el Varoquaux, Travis Vaught, and Jarrod Millman, editors, {\em
+  Proceedings of the 7th Python in Science Conference}, pages 11 -- 15,
+  Pasadena, CA USA, 2008.
+
+\bibitem{projectgutenberg}
+Project gutenberg.
+\newblock \url{https://www.gutenberg.org/}.
+\newblock Navštívené dňa 9.5.2025.
+
+\bibitem{Milojevi__2010}
+Staša Milojević.
+\newblock Power law distributions in information science: Making the case for
+  logarithmic binning.
+\newblock {\em Journal of the American Society for Information Science and
+  Technology}, 61(12):2417–2425, December 2010.
+
+\bibitem{cytoscape_website}
+{Cytoscape Consortium}.
+\newblock Cytoscape: An open source platform for complex network analysis and
+  visualization.
+\newblock \url{https://cytoscape.org}.
+\newblock Navštívené dňa 9.5.2025.
+
+\bibitem{gephi_website}
+{Gephi Consortium}.
+\newblock Gephi: The open graph viz platform.
+\newblock \url{https://gephi.org}.
+\newblock Navštívené dňa 9.5.2025.
+
+\end{thebibliography}
