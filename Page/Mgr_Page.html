@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analýza interpunkčných znamienok v rôznojazyčných textoch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.1);
+            transform: perspective(1px) translateZ(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        section:hover {
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            color: #2d2d2d;
+        }
+
+        section p, li {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: #000;
+        }
+
+        .info {
+            border: 2px solid #ddd;
+            background-color: #fafafa;
+        }
+
+        .annotation {
+            border: 2px solid #e5e5e5;
+        }
+
+        .goal {
+            border: 2px solid #d4d4d4;
+        }
+
+        .literature {
+            border: 2px solid #ccc;
+        }
+
+        .dennik {
+            border: 2px solid #b0b0b0;
+            background-color: #f9f9f9;
+        }
+
+        .dokumenty {
+            border: 2px solid #a0a0a0;
+            background-color: #f0f0f0;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #585858;
+            color: #fff;
+            text-align: center;
+            padding: 3px 0;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Model distribúcie interpunkčných znamienok v rôznych textoch</h1>
+        <nav>
+            <a href="#info">Info</a>
+            <a href="#annotation">Anotácia</a>
+            <a href="#goal">Cieľ práce</a>
+            <a href="#literature">Literatúra</a>
+            <a href="#dokumenty">Dokumenty</a>
+            <a href="#dennik">Denník</a>
+        </nav>
+        <section id="info" class="info">
+            <h2>Info</h2>
+            <p><strong>Názov:</strong> Model distribúcie interpunkčných znamienok v rôznych textoch</p>
+            <p><strong>Katedra:</strong> FMFI.KAI - Katedra aplikovanej informatiky</p>
+            <p><strong>Školiteľ:</strong> doc. RNDr. Mária Markošová, PhD</p>
+            <p><strong>Autor:</strong> Bc. Zdenko Németh</p>
+            <p><strong>Kontakt:</strong> nemeth105@uniba.sk</p>
+        </section>
+        <section id="annotation" class="annotation">
+            <h2>Anotácia</h2>
+            <p>
+                Študent naprogramuje, alebo použije už naprogramovanú aplikáciu na hľadanie
+                distribúcie interpunkčných znamienok v textoch v rôznych jazykoch. Ak
+                študent použije hotovú aplikáciu, musí k nej doprogramovať všetko potrebné
+                na analýzu distribúcie a na tvorbu jej modelu. Študent zanalyzuje distribúcie z
+                textov toho istého autora v rôznych časových obdobiach aby zistil, ako sa táto
+                vlastnosť textu mení a nakoľko ostáva stabilná. Navrhne matematický model
+                tejto distribúcie, poprípade nájde parametre známeho matematického modelu,
+                ktoré budú čo najlepšie vystihovať nameranú distribúciu. Porovná texty
+                vygenerované AI v štýle nejakého spisovateľa s jeho originálnymi textami.
+            </p>
+        </section>
+        <section id="goal" class="goal">
+            <h2>Cieľ práce</h2>
+            <p> 
+                Naprogramovať aplikáciu, alebo doprogramovať potrebné nástroje
+                do aplikácie na analýzu distribúcií interpunkčných znamienok v textoch
+                a vytvoriť matematický model opisujúci získané výsledky.
+            </p>
+        </section>
+        <section id="literature" class="literature">
+            <h2>Literatúra</h2>
+            <ul>
+                <li>
+                    <a href="https://arxiv.org/abs/1604.00834" target="_blank">
+                        Kulig and others. In narrative texts punctuation marks obey the same statistics as words, 
+                        Information Sciences Volume 375, 1 January 2017, Pages 98-113
+                    </a>
+                </li>
+                <li>
+                    <a href="https://petra.uniba.sk/?fn=detailBiblioFormChildG7KM6&amp;sid=FB57F9A55C85C1C4C89075265B&amp;seo=PETRA-detail-kapitola-/-pr%C3%ADspevok" target="_blank">
+						Markošová, Mária. Dynamika sietí, Umelá inteligencia a kognitívna veda II, 09.09.2024, Rozsahs. 321-379
+					</a>
+                </li>
+                <li>
+                    <a href="https://networksciencebook.com/" target="_blank">
+						Network Science by Albert-László Barabási
+					</a>
+                </li>
+                <li>
+                    <a href="https://opac.crzp.sk/?fn=detailBiblioForm&sid=D51643D01657CDEC269FB5F06848" target="_blank">
+						Petriľak, Daniel. Hľadanie príznakov afázie v jazykových textoch na báze slovenčiny
+					</a>
+                </li>
+            </ul>
+        </section>
+        <section id="dokumenty" class="dokumenty">
+            <h2>Dokumenty</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/Nemeth03/Masters-Thesis" target="_blank">
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section id="dennik" class="dennik">
+            <h2>Denník</h2>
+            <ul>
+            </ul>
+        </section>
+        <footer>
+            &copy; 2026 Németh Zdenko
+        </footer>
+    </div>
+</body>
+</html>
