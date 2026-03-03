@@ -1,0 +1,8 @@
+- rozbehat bc code
+- viacero jazykovych variacii
+- AI generated text
+- shuffle textu (slov, viet)
+- jazykove, grafove analyzy siete (bez a s interpunkciou)
+- ozvat sa o 1-2 tyzdne s ukazkami co som spravil ako budem pokracovat
+- spravit web, git
+- ak je zdroj vlastna praca treba citovat
