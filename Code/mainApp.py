@@ -2,9 +2,12 @@ import wx
 import matplotlib.pyplot as plt
 import networkx as nx
 import re
+import random
 from collections import Counter
 import numpy as np
 from scipy.stats import linregress
+from nltk.tokenize import sent_tokenize
+
 
 class App(wx.Frame):
 
@@ -15,6 +18,8 @@ class App(wx.Frame):
         self.inputTextFile = None
         self.languageOptions = ['', 'English', 'German']
         self.selectedLanguage = ''
+        self.shuffleOptions = ['', 'Sentences', 'Words']
+        self.selectedShuffle = ''
         self.punctuation = {'period': '.',
                             'comma': ',',
                             'exclamation': '!',
@@ -86,6 +91,13 @@ class App(wx.Frame):
         languageLayout.Add(wx.StaticText(panel, label='Select Language:'), flag=wx.ALIGN_LEFT)
         languageLayout.Add(self.languageDropdown, flag=wx.LEFT, border=10)
 
+        # Shuffle options
+        self.shuffleDropdown = wx.Choice(panel, choices=self.shuffleOptions)
+        self.shuffleDropdown.Bind(wx.EVT_CHOICE, self.shuffleChange)
+        additionalOptionsLayout = wx.BoxSizer(wx.HORIZONTAL)
+        additionalOptionsLayout.Add(wx.StaticText(panel, label='Shuffle:'), flag=wx.ALIGN_LEFT)
+        additionalOptionsLayout.Add(self.shuffleDropdown, flag=wx.LEFT, border=10)
+
         # Punctuation Selection
         self.selectAllCheckbox = wx.CheckBox(panel, label='Select All')
         self.selectAllCheckbox.Bind(wx.EVT_CHECKBOX, self.selectAllPunctuation)
@@ -154,6 +166,7 @@ class App(wx.Frame):
         vbox.Add(self.labelFileSelect, flag=wx.EXPAND | wx.LEFT | wx.TOP, border=10)
         vbox.Add(fileSelectLayout, flag=wx.EXPAND | wx.LEFT | wx.TOP, border=10)
         vbox.Add(languageLayout, flag=wx.EXPAND | wx.LEFT | wx.TOP, border=10)
+        vbox.Add(additionalOptionsLayout, flag=wx.LEFT | wx.TOP, border=10)
         vbox.Add(self.punctuationLabel, flag=wx.LEFT | wx.TOP, border=10)
         vbox.Add(self.selectAllCheckbox, flag=wx.LEFT | wx.TOP, border=10)
         vbox.Add(punctuationLayout, flag=wx.LEFT | wx.TOP, border=10)
@@ -177,6 +190,10 @@ class App(wx.Frame):
     def languageChange(self, event):
         self.selectedLanguage = self.languageOptions[self.languageDropdown.GetSelection()]
         self.validateInputData()
+
+    # Shuffle selection event handler
+    def shuffleChange(self, event):
+        self.selectedShuffle = self.shuffleOptions[self.shuffleDropdown.GetSelection()]
 
 
     # Select or deselect all punctuation checkboxes and validate data
@@ -223,6 +240,27 @@ class App(wx.Frame):
         with open(path, 'r', encoding='utf-8') as f:
             return f.read().strip()
         
+    # Apply sentence shuffling to the text
+    def applySentenceShuffle(self, text):
+        if self.selectedLanguage == "English":
+            nltk_language = "english"
+        elif self.selectedLanguage == "German":
+            nltk_language = "german"
+        else:
+            nltk_language = "english"
+
+        text = re.sub(r'\.\.\.(?=\s+(?:["„“”«»\'(\[])?[A-ZÄÖÜ])', '<ELLIPSIS>.', text)
+
+        sentences = [s.strip() for s in sent_tokenize(text, language=nltk_language) if s.strip()]
+
+        if len(sentences) > 1:
+            random.shuffle(sentences)
+        
+        shuffled = ' '.join(sentences)
+        shuffled = shuffled.replace('<ELLIPSIS>.', '...')
+
+        return shuffled
+    
 
     # Tokenize text file and return a list
     def processTextFile(self, selectedPunctuation={}):
@@ -235,7 +273,20 @@ class App(wx.Frame):
         else:
             usePunctuation = [regexDict[key] for key in selectedPunctuation.keys()]
             regexPattern = '|'.join([regexDict['wordsNumbers']] + usePunctuation)
-        data = re.findall(regexPattern, self.readTextFile(self.inputTextFile))
+
+        text = self.readTextFile(self.inputTextFile)
+        if self.selectedShuffle == 'Sentences':
+            shuffledText = self.applySentenceShuffle(text)
+            data = re.findall(regexPattern, shuffledText, flags=re.DOTALL)
+            return [word.lower() for word in data]
+
+        
+        if self.selectedShuffle == 'Words':
+            data = re.findall(regexPattern, text, flags=re.DOTALL)
+            random.shuffle(data)
+            return [word.lower() for word in data]
+
+        data = re.findall(regexPattern, text, flags=re.DOTALL)
         if not data:
             return []
         return [word.lower() for word in data]
@@ -708,6 +759,7 @@ class App(wx.Frame):
     # Collect input data info
     def collectInputDataInfo(self):
         return f'Input Data...\nFile selected: {self.labelFileSelectPath.GetValue()}\nLanguage: {self.selectedLanguage} \
+            \nShuffle: {self.selectedShuffle} \
             \nSelected Punctuation: {", ".join(self.selectedPunctuation.keys())}'
 
 
