@@ -4,29 +4,15 @@ import networkx as nx
 MODEL_PATH = "english-ewt-ud-2.5-191206.udpipe"
 
 text = """
-“Do you really think,” he asked quietly, “that everything we see is exactly what it seems to be?”
-Martin paused for a moment — not because he did not know the answer, but because he was unsure whether he wanted to say it out loud.
+“Yesterday I bought some new books,” Martin said. The books were interesting, more interesting than those he read last week.
+Read, reads, reading — all these forms belong to the same word.
 
-The room was silent. Too silent, unnaturally silent; the kind of silence that appears only when something is about to happen, or when something has already happened and no one wishes to speak of it.
-“Perhaps,” he said at last, “reality is nothing more than an interpretation. And interpretation… well, that changes.”
+On the table lay apples, pears, and bananas; some were fresh, others were spoiled.
+“Is it really worth it?” she asked.
 
-Books lay scattered across the table: old, dusty, filled with notes scribbled in the margins. Some pages were folded, others torn out — as if someone had deliberately removed parts of the story.
-Who would do such a thing? And why?
+Programming, programmed, programs — these words should also share the same base form.
+"""
 
-“Look at these sentences,” he continued, tracing the lines of text with his finger. “They repeat themselves. Not exactly, but enough for you to notice. Words, words, words — always the same, and yet somehow different each time.”
-
-Suddenly, there was a sound: knock, knock, knock. Someone stood behind the door. But who? And what did they want?
-Martin stood up slowly, cautiously; each step hesitant, as though he doubted the floor beneath him.
-
-“If you open it,” she whispered, “you won’t be able to take it back.”
-He said nothing. He knew that some decisions cannot be postponed — only ignored, and even that only for a while.
-
-The door opened. Light from the hallway poured inside, sharp and unforgiving.
-And then… nothing. No figure, no voice — only empty space.
-
-“Strange,” he said. “But not unexpected.”
-
-And so they stood there, silently, each absorbed in their own thoughts, overlapping, collapsing, and forming again — like a network that is never entirely stable, yet somehow still holds together."""
 
 # načítanie modelu
 model = Model.load(MODEL_PATH)

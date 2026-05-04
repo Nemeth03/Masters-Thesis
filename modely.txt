@@ -54,8 +54,3 @@ Fitness model (Bianconi–Barabási)
 - nové uzly sa pripájajú k existujúcim uzlom podľa ich stupňa (degree) aj ich fitness
 - porovnanie: degree distribúciu (power-law), exponent γ (nižší než pri BA/DGM), identifikácia dominantných uzlov (hubov)
 -  model lepšie zachytáva realitu, kde niektoré uzly (slová) sú prirodzene „silnejšie“
-
-
-
-
-
