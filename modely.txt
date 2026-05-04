@@ -1,0 +1,61 @@
+Zipf law (Jazykové)
+- frekvencia slova ~ 1/rank^α
+- vzniká prirodzene v jazyku
+- porovnanie: rank–frequency distribúciu slov, exponent α (~1)
+- overenie, že text je „jazykovo prirodzený“
+- baseline pre jazykovú štruktúru
+
+Dorogovtsev–Mendes (Scale-free)
+- rastúca sieť
+- nové uzly sa pripájajú k existujúcim hranám (nie len uzlom)
+- vzniká scale-free sieť
+- porovnanie: degree distribúciu (power-law), clustering coefficient
+- lepšie modeluje jazyk než BA (vyšší clustering)
+
+Erdős–Rényi (Náhodné)
+- každý pár uzlov má pravdepodobnosť p, že je spojený
+- úplne náhodná sieť
+- porovnanie: density, clustering (nízky), shortest path
+- nulový model (baseline)
+- ukáže, že jazyk ≠ náhodný graf
+
+Watts–Strogatz (Small-world)
+- začneš s pravidelnou sieťou, náhodne prepojíš niektoré hrany, vzniká small-world sieť
+- porovnanie: clustering (vysoký), krátke cesty (small-world efekt)
+- jazykové siete majú small-world vlastnosti 
+
+Barabási–Albert (BA) (Scale-free)
+- preferenčné pripájanie
+- uzly s vysokým stupňom dostávajú viac hrán
+- vzniká power-law distribúcia
+- porovnanie: degree distribúciu, exponent γ
+- základný scale-free model
+
+Configuration model (Kontrolné)
+- vezmeš degree distribúciu tvojej siete, náhodne poprepájaš hrany, zachováš stupne uzlov
+- clustering, path length, štruktúru vs náhodnosť
+- Stačí degree distribúcia na vysvetlenie siete?
+
+Simon/Yule model (Jazykové)
+- generuje slová s pravdepodobnosťou, nové slovo (malá šanca), alebo opakovanie existujúceho
+- prirodzene vzniká Zipf
+- porovnanie: frekvencie slov, Zipf exponent
+- model vzniku jazykovej distribúcie
+
+Nonlinear preferential attachment
+- podobné BA, pravdepodobnosť ~ k^α
+- α ≠ 1 → iný rast
+- porovnanie: tvar degree distribúcie, odchýlky od power-law
+- realita nemusí byť presne lineárna
+- flexibilnejší model než BA 
+
+Fitness model (Bianconi–Barabási)
+- každý uzol má svoju „atraktivitu“ (fitness), ktorá určuje, ako ľahko získava nové spojenia
+- nové uzly sa pripájajú k existujúcim uzlom podľa ich stupňa (degree) aj ich fitness
+- porovnanie: degree distribúciu (power-law), exponent γ (nižší než pri BA/DGM), identifikácia dominantných uzlov (hubov)
+-  model lepšie zachytáva realitu, kde niektoré uzly (slová) sú prirodzene „silnejšie“
+
+
+
+
+
