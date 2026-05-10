@@ -1,0 +1,30 @@
+Grafová analýza...
+Number of nodes: 2492
+Number of edges: 10019
+Max degree: (',', 860)
+Min degree: ('wetter', 1)
+Average degree: 8.04093
+Network density: 0.00323
+Average clustering coefficient: 0.34884
+Average shortest path length: 2.76212
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 2990
+Most common punctuation: ('.', 1228)
+Least common punctuation: (';', 1)
+Number of words: 2492
+Max word length: 20
+Min word length: 1
+Average word length: 6.14767
+Number of sentences: 1277
+Max sentence length: 45
+Min sentence length: 1
+Average sentence length: 13.37745
+Number of bigrams: 10356
+Max bigram frequency: 305
+Min bigram frequency: 1
+Average bigram frequency: 1.93839
+Number of trigrams: 15986
+Max trigram frequency: 72
+Min trigram frequency: 1
+Average trigram frequency: 1.25566

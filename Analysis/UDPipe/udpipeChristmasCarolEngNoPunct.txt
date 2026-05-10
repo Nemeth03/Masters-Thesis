@@ -1,0 +1,98 @@
+No Shuffle
+Grafová analýza...
+Number of nodes: 3230
+Number of edges: 13077
+Max degree: ('and', 845)
+Min degree: ('degradation', 1)
+Average degree: 8.09721
+Network density: 0.00251
+Average clustering coefficient: 0.40852
+Average shortest path length: 2.82903
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 0
+Most common punctuation: None
+Least common punctuation: None
+Number of words: 3230
+Max word length: 16
+Min word length: 1
+Average word length: 6.18762
+Number of sentences: 1288
+Max sentence length: 136
+Min sentence length: 1
+Average sentence length: 16.73137
+Number of bigrams: 13857
+Max bigram frequency: 155
+Min bigram frequency: 1
+Average bigram frequency: 1.55676
+Number of trigrams: 20016
+Max trigram frequency: 22
+Min trigram frequency: 1
+Average trigram frequency: 1.07769
+
+
+Shuffle Sentences
+Grafová analýza...
+Number of nodes: 3230
+Number of edges: 13103
+Max degree: ('and', 848)
+Min degree: ('degradation', 1)
+Average degree: 8.11331
+Network density: 0.00251
+Average clustering coefficient: 0.40772
+Average shortest path length: 2.82374
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 0
+Most common punctuation: None
+Least common punctuation: None
+Number of words: 3230
+Max word length: 16
+Min word length: 1
+Average word length: 6.18762
+Number of sentences: 1288
+Max sentence length: 136
+Min sentence length: 1
+Average sentence length: 16.73758
+Number of bigrams: 13865
+Max bigram frequency: 155
+Min bigram frequency: 1
+Average bigram frequency: 1.55586
+Number of trigrams: 20022
+Max trigram frequency: 22
+Min trigram frequency: 1
+Average trigram frequency: 1.07736
+
+
+
+Shuffle Words
+Grafová analýza...
+Number of nodes: 3230
+Number of edges: 14736
+Max degree: ('the', 802)
+Min degree: ('bedlam', 1)
+Average degree: 9.12446
+Network density: 0.00283
+Average clustering coefficient: 0.39859
+Average shortest path length: 2.88044
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 0
+Most common punctuation: None
+Least common punctuation: None
+Number of words: 3230
+Max word length: 16
+Min word length: 1
+Average word length: 6.18762
+Number of sentences: 1228
+Max sentence length: 107
+Min sentence length: 1
+Average sentence length: 17.58795
+Number of bigrams: 16175
+Max bigram frequency: 58
+Min bigram frequency: 1
+Average bigram frequency: 1.33366
+Number of trigrams: 21288
+Max trigram frequency: 5
+Min trigram frequency: 1
+Average trigram frequency: 1.01329

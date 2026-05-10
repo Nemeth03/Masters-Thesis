@@ -1,0 +1,97 @@
+No Shuffle
+Grafová analýza...
+Number of nodes: 3244
+Number of edges: 13246
+Max degree: (',', 1208)
+Min degree: ('gravely', 1)
+Average degree: 8.16646
+Network density: 0.00252
+Average clustering coefficient: 0.49469
+Average shortest path length: 2.71749
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 4818
+Most common punctuation: (',', 2054)
+Least common punctuation: (']', 3)
+Number of words: 3244
+Max word length: 16
+Min word length: 1
+Average word length: 6.16523
+Number of sentences: 1288
+Max sentence length: 136
+Min sentence length: 1
+Average sentence length: 16.73137
+Number of bigrams: 14078
+Max bigram frequency: 400
+Min bigram frequency: 1
+Average bigram frequency: 1.87456
+Number of trigrams: 22381
+Max trigram frequency: 72
+Min trigram frequency: 1
+Average trigram frequency: 1.17908
+
+
+Shuffle Sentences
+Grafová analýza...
+Number of nodes: 3244
+Number of edges: 13259
+Max degree: (',', 1209)
+Min degree: ('gravely', 1)
+Average degree: 8.17448
+Network density: 0.00252
+Average clustering coefficient: 0.49376
+Average shortest path length: 2.71623
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 4818
+Most common punctuation: (',', 2054)
+Least common punctuation: (']', 3)
+Number of words: 3244
+Max word length: 16
+Min word length: 1
+Average word length: 6.16523
+Number of sentences: 1288
+Max sentence length: 136
+Min sentence length: 1
+Average sentence length: 16.73758
+Number of bigrams: 14071
+Max bigram frequency: 400
+Min bigram frequency: 1
+Average bigram frequency: 1.87549
+Number of trigrams: 22424
+Max trigram frequency: 72
+Min trigram frequency: 1
+Average trigram frequency: 1.17682
+
+
+Shuffle Words
+Grafová analýza...
+Number of nodes: 3244
+Number of edges: 15502
+Max degree: (',', 1017)
+Min degree: ('perspiration', 1)
+Average degree: 9.55734
+Network density: 0.00295
+Average clustering coefficient: 0.48466
+Average shortest path length: 2.77995
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 4818
+Most common punctuation: (',', 2054)
+Least common punctuation: (']', 3)
+Number of words: 3244
+Max word length: 16
+Min word length: 1
+Average word length: 6.16523
+Number of sentences: 1228
+Max sentence length: 107
+Min sentence length: 1
+Average sentence length: 17.58795
+Number of bigrams: 17291
+Max bigram frequency: 153
+Min bigram frequency: 1
+Average bigram frequency: 1.52623
+Number of trigrams: 25428
+Max trigram frequency: 11
+Min trigram frequency: 1
+Average trigram frequency: 1.03779

@@ -1,0 +1,30 @@
+Grafová analýza...
+Number of nodes: 2498
+Number of edges: 11198
+Max degree: ('the', 658)
+Min degree: ('consummate', 1)
+Average degree: 8.96557
+Network density: 0.00359
+Average clustering coefficient: 0.40550
+Average shortest path length: 2.79347
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 0
+Most common punctuation: None
+Least common punctuation: None
+Number of words: 2498
+Max word length: 16
+Min word length: 1
+Average word length: 6.28423
+Number of sentences: 1622
+Max sentence length: 125
+Min sentence length: 1
+Average sentence length: 12.39211
+Number of bigrams: 11932
+Max bigram frequency: 130
+Min bigram frequency: 1
+Average bigram frequency: 1.68530
+Number of trigrams: 18147
+Max trigram frequency: 45
+Min trigram frequency: 1
+Average trigram frequency: 1.10806
