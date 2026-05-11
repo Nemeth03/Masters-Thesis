@@ -1,0 +1,62 @@
+Grafová analýza...
+Number of nodes: 3305
+Number of edges: 10355
+Max degree: ('a', 792)
+Min degree: ('marný', 1)
+Average degree: 6.26626
+Network density: 0.00190
+Average clustering coefficient: 0.22265
+Average shortest path length: 3.17061
+Diameter: 7
+Jazyková analýza...
+Number of punctuation marks: 0
+Most common punctuation: None
+Least common punctuation: None
+Number of words: 3305
+Max word length: 22
+Min word length: 1
+Average word length: 6.66082
+Number of sentences: 1012
+Max sentence length: 98
+Min sentence length: 1
+Average sentence length: 13.71640
+Number of bigrams: 10758
+Max bigram frequency: 57
+Min bigram frequency: 1
+Average bigram frequency: 1.29057
+Number of trigrams: 13174
+Max trigram frequency: 9
+Min trigram frequency: 1
+Average trigram frequency: 1.05382
+
+
+Grafová analýza...
+Number of nodes: 3317
+Number of edges: 10614
+Max degree: (',', 1277)
+Min degree: ('hľ', 1)
+Average degree: 6.39976
+Network density: 0.00193
+Average clustering coefficient: 0.36792
+Average shortest path length: 2.87648
+Diameter: 6
+Jazyková analýza...
+Number of punctuation marks: 3792
+Most common punctuation: (',', 1790)
+Least common punctuation: ('–', 1)
+Number of words: 3317
+Max word length: 22
+Min word length: 1
+Average word length: 6.64034
+Number of sentences: 1012
+Max sentence length: 98
+Min sentence length: 1
+Average sentence length: 13.71640
+Number of bigrams: 11087
+Max bigram frequency: 289
+Min bigram frequency: 1
+Average bigram frequency: 1.59430
+Number of trigrams: 15207
+Max trigram frequency: 70
+Min trigram frequency: 1
+Average trigram frequency: 1.16229
