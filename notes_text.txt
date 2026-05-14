@@ -1,0 +1,217 @@
+Slide 1
+Dobrý deň, volám sa Zdenko Németh a dnes by som vám chcel predstaviť svoju diplomovú prácu 
+s názvom Model distribúcie interpunkčných znamienok v rôznych textoch.
+
+Vedúcou mojej práce je pani docentka Mária Markošová.
+
+V prezentácii ukážem, na čom momentálne pracujem, aké rozšírenia som implementoval do existujúcej aplikácie, 
+aké experimenty som realizoval a aké matematické modely plánujem použiť pri analýze pozičných slovných sietí.
+
+
+Slide 2
+Téma práce je zameraná na analýzu distribúcie interpunkčných znamienok a slov v rôznych textoch a jazykoch 
+pomocou komplexných sietí.
+
+Cieľom je vytvárať pozičné slovné siete z textu, skúmať ich vlastnosti a porovnávať ich so známymi 
+matematickými modelmi, poprípade snaha o vytvorenie vlastného.
+
+Súčasťou práce je aj porovnanie textov po rôznych úpravách, napríklad po permutácii slov alebo viet, a taktiež 
+porovnanie originálnych textov s AI generovanými textami.
+
+
+Slide 3
+V diplomovej práci nadväzujem na aplikáciu, ktorú som vytvoril už v rámci bakalárskej práce.
+Keďže ide o rozšírenie pôvodnej témy, rozhodol som sa pokračovať vo vývoji existujúceho riešenia a doplniť 
+nové funkcionality a experimenty.
+
+Pôvodná aplikácia umožňovala vytvárať pozičné slovné siete z textu a vykonávať základnú grafovú a jazykovú analýzu.
+Obsahovala tokenizáciu textu, podporu viacerých jazykov, výber interpunkčných znamienok a analýzu distribúcie 
+stupňov vrcholov či rastu siete.
+
+V tom čase aplikácia podporovala angličtinu a nemčinu, pričom v diplomovej práci ju ďalej rozširujem a vylepšujem.
+
+
+Slide 4
+Na tomto slide je ukážka grafického rozhrania aplikácie z bakalárskej práce.
+
+Používateľ si môže načítať textový súbor, vybrať jazyk a zvoliť interpunkčné znamienka, ktoré budú zahrnuté do analýzy.
+Takisto si používateľ môže vybrať aký druh analýzy si praje spraviť s vybraným textom, či už grafovú a jazykovú,
+distribúciu stupňov vrcholov, rastovú analýzu siete.
+
+Na pravej strane je zobrazená ukážka distribúcie stupňov vrcholov vytvorenej siete.
+Porovnávam tam reálnu jazykovú sieť s Dorogovtsev–Mendes modelom, ktorý patrí medzi scale-free modely s power-law distribúciou.
+
+Parameter gamma predstavuje exponent tejto distribúcie a určuje, ako rýchlo klesá počet vrcholov s rastúcim stupňom.
+
+
+Slide 5
+Tento graf zobrazuje rastovú analýzu siete.
+Cieľom bolo sledovať, ako sa mení exponent gamma pri postupnom zväčšovaní siete, teda pri pridávaní 
+ďalších slov a vrcholov.
+
+Pomocou tejto analýzy vieme určiť, od akého počtu vrcholov sa výsledky začínajú stabilizovať a sieť už 
+nemení svoje základné vlastnosti.
+
+To je dôležité hlavne pri určovaní minimálnej veľkosti textovej vzorky, ktorá je postačujúca na spoľahlivú 
+analýzu distribúcie a štruktúry siete.
+
+Na grafe môžeme vidieť, že po určitom počte vrcholov sa hodnota gamma ustáli približne okolo hodnoty 2, čo 
+naznačuje stabilné scale-free správanie siete.
+
+
+Slide 6
+Pozičné slovné siete reprezentujem ako jednoduché, neorientované a neohodnotené grafy.
+Uzly predstavujú jednotlivé slová a hrany vznikajú medzi slovami, ktoré sa nachádzajú vedľa seba v texte.
+
+
+Slide 7
+Na tomto slide sú zhrnuté hlavné rozšírenia aplikácie oproti bakalárskej práci.
+
+Najväčšou zmenou bolo prepracovanie predspracovania textu.
+Pôvodná regex tokenizácia bola nahradená nástrojom UDPipe, ktorý umožňuje presnejšiu tokenizáciu,
+lemmatizáciu a jednoduchšiu podporu viacerých jazykov.
+
+Ďalej som implementoval experimenty s permutáciou viet a slov, aby bolo možné sledovať, ako sa mení 
+štruktúra siete pri narušení prirodzeného poradia textu.
+
+Súčasťou práce je aj analýza AI generovaných textov a ich porovnanie s originálnymi textami.
+Taktiež som pridal podporu slovenského jazyka.
+
+Do budúcna ma čaká implementácia viacerých matematických modelov na porovnávanie distribúcií a rozšírenie 
+grafických vizualizácií jazykovej analýzy, napríklad distribúcie dĺžok viet alebo ďalších štatistických vlastností textu.
+
+
+Slide 8
+Pôvodná aplikácia používala regex tokenizáciu, ktorá síce fungovala pri jednoduchom spracovaní textu,
+ale mala viacero obmedzení.
+
+Problém nastával hlavne pri rôznych tvaroch slov, skloňovaní a časovaní, pretože aplikácia považovala každé slovo
+v inom tvare za samostatný uzol siete.
+Zároveň bola podpora ďalších jazykov pomerne komplikovaná.
+
+Preto som predspracovanie nahradil nástrojom UDPipe, ktorý zabezpečuje presnejšiu tokenizáciu a lemmatizáciu textu.
+To znamená, že rôzne tvary slov sa prevedú na spoločný základný tvar, čo vedie ku konzistentnejším a presnejším pozičným slovným sieťam.
+
+Na spodnej ukážke môžeme vidieť, že slová ako „programovanie“, „programoval“ a „programuje“ sú po lemmatizácii 
+reprezentované rovnakým základným tvarom.
+
+
+Slide 9
+Hlavný rozdiel po použití UDPipe je zníženie počtu vrcholov a hrán siete, keďže lemmatizácia spojila rôzne 
+tvary rovnakých slov do jedného uzla.
+
+Tým sa sieť stala kompaktnejšou a konzistentnejšou, zvýšil sa clustering coefficient a priemerný stupeň vrcholov, 
+čo naznačuje presnejšie zachytenie vzťahov medzi slovami.
+
+
+Slide 10
+V ďalšej časti prezentácie ukážem experimenty a analýzy, pomocou ktorých som skúmal vlastnosti jazykových 
+sietí a vplyv rôznych úprav textu na ich štruktúru.
+
+
+Slide 11
+Pri permutácii viet sa vlastnosti siete takmer nemenia, čo naznačuje, že globálna štruktúra textu zostáva zachovaná. 
+Naopak, pri náhodnej permutácii slov sa výrazne mení počet hrán, hustota siete aj frekvencie bigramov a trigramov, 
+pretože sa narušia prirodzené vzťahy medzi susednými slovami. 
+To ukazuje, že lokálne slovné väzby majú veľký vplyv na štruktúru jazykovej siete.
+
+
+Slide 12
+Pri porovnaní originálneho textu a AI generovaného textu vidíme, že AI text má nižší clustering coefficient aj menší počet hrán,
+čo naznačuje jednoduchšie a menej prepojené jazykové štruktúry. Zároveň sa líšia frekvencie bigramov a trigramov,
+teda lokálne vzťahy medzi slovami. 
+Tento experiment bol realizovaný na jednoduchej próze – Portréte Doriana Graya – a do budúcna plánujem analyzovať aj komplexnejšie texty.
+
+
+Slide 13-14
+Na tomto slide je možné vidieť modely, ktoré plánujem pridať:
+Zipfov zákon - už je implementovaný.
+„Zipfov zákon opisuje vzťah medzi frekvenciou slova a jeho poradím v texte. Pomocou neho viem overiť, či jazyková 
+sieť vykazuje prirodzené vlastnosti reálneho jazyka a porovnať rozdiely medzi originálnym a AI generovaným textom.“
+
+Simon / Yule model
+„Tento model vysvetľuje vznik Zipfovej distribúcie na základe rastu slovnej zásoby a opakovania často používaných slov. 
+Má zmysel pri simulácii toho, ako sa jazyková sieť vyvíja počas postupného pridávania textu.“
+
+Dorogovtsev–Mendes model - už je implementovaný.
+„Ide o model rastúcej scale-free siete s vysokým clusteringom. Je zaujímavý preto, že jazykové siete majú podobné 
+vlastnosti – vznikajú v nich silno prepojené skupiny slov a uzly s vysokým stupňom.“
+
+Barabási–Albert model
+„Barabási–Albert model využíva princíp preferenčného pripájania, kde sa nové uzly častejšie pripájajú k už populárnym uzlom.
+V jazykových sieťach to môže reprezentovať často používané slová, ktoré získavajú veľké množstvo spojení.“
+
+Fitness model (Bianconi–Barabási)
+„Fitness model rozširuje BA model o atraktivitu uzlov. To je vhodné pre jazyk, pretože niektoré slová môžu byť významné
+alebo špecifické aj napriek tomu, že nie sú najfrekventovanejšie.“
+
+Nonlinear preferential attachment
+„Tento model rozširuje Barabási–Albert model tým, že preferenčné pripájanie nemusí byť lineárne. 
+Môže lepšie vystihovať jazykové siete, kde niektoré slová rastú rýchlejšie alebo pomalšie než predpokladá klasický BA model.“
+
+Configuration model
+„Configuration model zachováva degree distribúciu siete, ale náhodne premieša spojenia medzi uzlami. 
+Má zmysel pri porovnaní, ktoré vlastnosti siete vznikajú len zo samotnej distribúcie stupňov a ktoré sú dôsledkom reálnej štruktúry jazyka.“
+
+Watts–Strogatz model
+„Watts–Strogatz model vytvára small-world siete s krátkymi cestami a vysokým clusteringom. 
+Keďže podobné vlastnosti sa objavujú aj v jazykových sieťach, model môže pomôcť vysvetliť ich efektívnu prepojenosť.“
+
+Erdős–Rényi model
+„Erdős–Rényi model reprezentuje čisto náhodnú sieť. Použitie tohto modelu umožní porovnať, do akej miery sa 
+jazykové siete líšia od náhodných štruktúr a ktoré vlastnosti vznikajú v dôsledku prirodzeného jazyka.“
+
+Aj ked Erdős–Rényi model je čisto náhodný model siete, bolo by zaujímavé ho porovnať s permutáciou slov.
+
+
+Slide 15
+
+1. In narrative texts punctuation marks obey the same statistics as words
+Článok sa zameriava na štatistické vlastnosti interpunkčných znamienok v naratívnych textoch a skúma, 
+či sa z pohľadu komplexných sietí správajú podobne ako bežné slová.
+
+Autori analyzovali pozičné slovné siete vo viacerých európskych jazykoch a ukázali, že interpunkčné znamienka 
+majú podobné vlastnosti ako najfrekventovanejšie slová — napríklad z pohľadu Zipfovej distribúcie, 
+clustering coefficientu alebo shortest path length.
+
+Tento článok bol pre moju prácu dôležitý hlavne preto, že:
+
+používa rovnaký princíp word-adjacency / pozičných slovných sietí,
+pracuje s naratívnou prózou,
+porovnáva jazykové siete pomocou komplexných sieťových metrík,
+a zároveň obhajuje zahrnutie interpunkcie do analýzy.
+
+2. Networksciencebook
+Kniha Network Science od Alberta-Lászlóa Barabásiho predstavuje základy sieťovej vedy a vysvetľuje, 
+ako fungujú komplexné siete v prírode, technológiách aj spoločnosti. Opisuje kľúčové vlastnosti sietí, 
+ako sú scale-free distribúcie, small-world efekt, clustering či preferenčné pripájanie.
+
+Pre moju prácu je dôležitá hlavne preto, že poskytuje teoretický základ pre analýzu pozičných slovných sietí 
+a matematické modely, ktoré plánujem implementovať a porovnávať s reálnymi jazykovými sieťami.
+
+3. Language as an Evolving Word Web
+Článok sa zameriava na modelovanie jazyka ako rastúcej komplexnej siete, kde slová predstavujú vrcholy a spojenia 
+vznikajú medzi susednými slovami v texte. Autori ukazujú, že jazykové siete majú scale-free charakter a ich 
+degree distribúcia sa riadi power-law správaním.
+
+Pre moju prácu bol tento článok dôležitý hlavne preto, že používa rovnaký princíp pozičných slovných sietí a 
+zároveň vysvetľuje vznik ich distribúcie pomocou rastových modelov a preferenčného pripájania. 
+Článok bol zároveň inšpiráciou pri implementácii Dorogovtsev–Mendes modelu a pri analýze exponentu 
+gamma v distribúcii stupňov vrcholov.
+
+4. Dynamika sietí
+Jedna sa o článok mojej školiteľky. 
+Venuje sa aplikácii teórie komplexných sietí na rôzne typy reálnych systémov vrátane jazykových sietí. 
+Dokument zhromažďuje poznatky o scale-free sieťach, small-world vlastnostiach a modeloch rastu sietí, pričom 
+sa opiera o viaceré významné práce z oblasti sieťovej teórie a modelovania jazyka.
+
+Pre moju prácu bol tento dokument dôležitý najmä ako teoretický základ pri analýze jazykových sietí a interpretácii 
+ich topologických vlastností. Poskytol mi prehľad o modeloch komplexných sietí, princípoch preferenčného pripájania 
+a vlastnostiach scale-free štruktúr, ktoré som následne využil pri implementácii a analýze vlastnej siete slov.
+
+Dokument zároveň uvádza viaceré práce zamerané priamo na jazykové siete a evolúciu jazykových webov, 
+napríklad práce Ferrera i Cancha, Solého alebo Dorogovtseva a Mendesa.
+
+Vytvorili vlastný model non-linear preferential attachment.
+
+
