@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1778768255.71344 "main.aux" "main.bbl" "main" 1778768258.38462 0
-  "./references.bib" 1778767879 1240 8418f1d1eea97ec1bbcac1fabf5c8c97 ""
+["bibtex main"] 1778826064.5661 "main.aux" "main.bbl" "main" 1778826067.20171 0
+  "./references.bib" 1778825798 1242 95f802940b70a245c76e4c76592a16ec ""
   "C:/Program Files/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1778768257 647 cc2bc8af59bdd0e02c7eec9dc90203d5 "pdflatex"
+  "main.aux" 1778826066 1429 31b8dab7279c0f2eee2c8b05bf8d396a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778768256.02322 "c:/Users/megam/Desktop/Masters-Thesis/Text/src/main.tex" "main.pdf" "main" 1778768258.38527 0
+["pdflatex"] 1778826064.87969 "c:/Users/megam/Desktop/Masters-Thesis/Text/src/main.tex" "main.pdf" "main" 1778826067.20232 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecbx1200.tfm" 993061958 3200 b8d69bc738e5ef3e08cefeef3109ff56 ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecbx1728.tfm" 993061962 3204 d35cb76836b6cb4ed404dd64a550530d ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecbx2488.tfm" 993061966 3192 b0a07ba84fb3fb36d088c4f796e254b9 ""
@@ -216,17 +216,21 @@
   "C:/Users/megam/AppData/Roaming/MiKTeX/tex/latex/microtype/mt-msb.cfg" 1739317595 5594 d52d5015abe666fae752ed7674c2dd73 ""
   "C:/Users/megam/AppData/Roaming/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/megam/AppData/Roaming/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
-  "c:/Users/megam/Desktop/Masters-Thesis/Text/src/main.tex" 1778768251 4878 df52a20c325bbd1dcc2fffa5c0f1967b ""
+  "c:/Users/megam/Desktop/Masters-Thesis/Text/src/main.tex" 1778825852 4878 df52a20c325bbd1dcc2fffa5c0f1967b ""
+  "chapters/00-Uvod.tex" 1778825955 113 862e4471d5a4f0a0e2a1d214a59287bc ""
+  "chapters/10-theory.tex" 1778826061 60 8335819d28c198e81ae5a1f4d3fd09fc ""
+  "chapters/20-application.tex" 1778826061 78 cee5968f2ee4a1f2624bd2083a1e62fe ""
+  "chapters/90-Zaver.tex" 1778825955 115 c157c8c208535e0a63a5a35dd98488fe ""
   "definitions.tex" 1778767879 1641 cbb814dceb994c3d965844392568ecd2 ""
   "images/assignment-sk.pdf" 1778767879 143132 7427793909d1deddc38bb96cae762854 ""
   "images/logoFMFI.pdf" 1778767879 6475 a7d1228ea7ea7fbaf280718c58af325a ""
-  "main.aux" 1778768257 647 cc2bc8af59bdd0e02c7eec9dc90203d5 "pdflatex"
-  "main.bbl" 1778768255 887 d7aa8695bcd4e5202213b2628fd06ca7 "bibtex main"
-  "main.lof" 1778768257 180 b2ee5db5e4379428456f8d30b4c6883b "pdflatex"
-  "main.out" 1778768257 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1778768251 4878 df52a20c325bbd1dcc2fffa5c0f1967b ""
-  "main.toc" 1778768257 180 b2ee5db5e4379428456f8d30b4c6883b "pdflatex"
-  "variables.tex" 1778767879 4263 ebd8e23dcaead1b6e0e5e20888fe641b ""
+  "main.aux" 1778826066 1429 31b8dab7279c0f2eee2c8b05bf8d396a "pdflatex"
+  "main.bbl" 1778826064 887 d7aa8695bcd4e5202213b2628fd06ca7 "bibtex main"
+  "main.lof" 1778826066 220 22709deecc0cebc317521c9e97b16466 "pdflatex"
+  "main.out" 1778826066 308 385a191e013ad7b4628918894a648870 "pdflatex"
+  "main.tex" 1778825852 4878 df52a20c325bbd1dcc2fffa5c0f1967b ""
+  "main.toc" 1778826066 406 9163f51defb3708d25388c93c3e2582d "pdflatex"
+  "variables.tex" 1778826032 4243 db4bbfb30f44c2e318d5ab6fa9d7d3ee ""
   (generated)
   "main.aux"
   "main.lof"
