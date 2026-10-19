@@ -1,0 +1,342 @@
+# Zipf's Law
+
+- relationship between word frequency and word rank
+- the most frequent word has rank 1, the second most frequent word has rank 2, and so on
+- word frequency typically decreases as rank increases
+- the ideal form follows a power-law relationship:
+  
+  f(r) ∝ 1 / r^α
+
+- f(r) represents the frequency of the word at rank r
+- α is the Zipf exponent, typically close to 1 in natural language
+- Zipf's law describes word frequencies, not connections between words in a network.
+
+## How does the ideal Zipf model work
+- the application uses the ideal exponent α = 1
+- each unique token is assigned a rank
+- expected token probabilities are proportional to 1/r
+- probabilities are normalized so their sum equals 1
+- expected frequencies are calculated using the total number
+  of tokens in the selected real text
+- the ideal model therefore has the same number of ranks and
+  expected total tokens as the selected real text
+- the ideal model does not generate a word-adjacency network
+
+## Typical properties
+- **Rank-frequency distribution:** Frequencies decrease
+  approximately according to a power law.
+- **Zipf exponent α:** Describes how quickly frequency decreases
+  as rank increases.
+- **α ≈ 1:** Corresponds to the classical form of Zipf's law.
+- **α > 1:** Indicates a steeper decrease in word frequencies.
+- **α < 1:** Indicates a slower decrease in word frequencies.
+- **Log-log representation:** An ideal Zipf distribution appears
+  as a straight line with slope -α.
+- **R-squared:** Measures how closely the log-transformed
+  rank-frequency data follow the fitted straight line.
+
+## I analyze
+- **Number of nodes:** Number of unique tokens in the
+  word-adjacency network.
+- **Number of edges:** Number of unique connections between
+  adjacent tokens.
+- **Total tokens:** Total number of word and selected punctuation
+  occurrences in the processed text.
+- **Maximum frequency:** Frequency of the most common token.
+- **Minimum frequency:** Frequency of the least common tokens.
+- **Average frequency:** Average number of occurrences per
+  unique token.
+- **Zipf exponent α:** Estimated from linear regression on
+  logarithmic ranks and frequencies.
+- **R-squared:** Measures the quality of the log-log linear fit.
+- **Classic rank-frequency distribution:** Compares observed
+  token frequencies with the ideal Zipf model.
+- **Log-binned rank-frequency distribution:** Reduces visual
+  fluctuations by averaging frequencies within logarithmic
+  rank intervals.
+- **Influence of punctuation:** Compares rank-frequency
+  distributions with and without selected punctuation.
+
+
+
+# Erdős–Rényi (ER) Model
+- random network
+- does not include preferential attachment, network growth, or explicit triangle formation
+
+- The application uses the **G(n, m) variant** of the Erdős–Rényi model.
+- **n** represents the number of nodes.
+- **m** represents the number of edges.
+- The model randomly selects exactly **m distinct edges** from all possible edges between **n nodes**.
+- The model has the same number of nodes and edges as the selected real word-adjacency network.
+
+## typical properties
+- **Degree distribution:** Approximately Poisson-shaped for large, sparse networks with suitable parameters.
+- **Average degree:** Equal to the real network's average degree because the numbers of nodes and edges are matched.
+- **Clustering coefficient:** Generally low in sparse random networks.
+- **Network density:** Identical to the matched real network.
+- **Hubs:** Does not typically produce the extremely highly connected nodes observed in language networks.
+- **Degree correlations:** Generally weak, without an explicit mechanism favoring connections between particular degree classes.
+
+## I analyze
+- **Number of nodes and edges:** Verifies that the ER model matches the real network's size.
+- **Average degree:** Compares the overall connectivity.
+- **Maximum degree:** Investigates whether random networks produce hubs comparable to those in real text.
+- **Network density:** Measures the proportion of existing edges among all possible edges.
+- **Average clustering coefficient:** Compares the tendency of nodes to form tightly connected groups.
+- **Classic degree distribution:** Compares how many nodes have each degree.
+- **Log-binned degree distribution:** Makes differences in the shapes of degree distributions easier to observe across degree scales.
+- **Influence of punctuation:** Compares real networks with and without punctuation against one ER reference network.
+
+
+
+# Watts–Strogatz (WS) Model
+
+- Designed to explain the small-world properties observed in many real-world networks.
+- Combines regular local connections with randomly rewired edges.
+- Demonstrates how networks can have high clustering and short path lengths.
+- Serves as a reference model for investigating small-world structure.
+- Unlike preferential attachment models, it does not explicitly favor highly connected nodes.
+
+## How does the model work
+- The model starts with a regular ring lattice.
+- Each node is initially connected to k nearest neighbors.
+- The parameter k must be an even integer smaller than the number of nodes.
+- Each original lattice edge is considered for rewiring with probability p.
+- Rewiring introduces shortcuts between otherwise distant parts of the network.
+- The model preserves the number of nodes and edges during rewiring.
+- The resulting network is simple, undirected, and unweighted.
+
+### Parameters used in the application
+- **N:** Number of nodes in the selected real word-adjacency network.
+- **k:** Even integer approximating the real network's average degree.
+- **p = 0.1:** Fixed rewiring probability.
+- **Random seed:** Controls reproducibility of the generated network.
+- The WS model matches the real network's number of nodes.
+- Its number of edges is N × k / 2, which may differ from the real network.
+
+## typical properties
+- **Degree distribution:** Relatively narrow compared with heavy-tailed networks.
+- **Average degree:** Equal to k.
+- **Clustering coefficient:** Usually relatively high for small rewiring probabilities.
+- **Average shortest path length:** Can decrease substantially as rewiring introduces shortcuts.
+- **Network density:** Determined by N and k.
+- **Hubs:** Does not typically generate extremely high-degree nodes.
+- **Small-world behavior:** Can combine strong local clustering with short paths.
+
+### Effect of rewiring probability
+- **p = 0:** Regular ring lattice with no rewiring.
+- **0 < p < 1:** Increasingly randomized network.
+- **p = 1:** All original lattice edges are considered for rewiring.
+- Small nonzero values of p can substantially shorten paths
+  while retaining much of the lattice's clustering.
+
+## I analyze
+- **Number of nodes:** Verifies that the WS model matches the real network's size.
+- **Number of edges:** Compares the total number of connections.
+- **Parameter k:** Determines the initial number of neighbors per node.
+- **Rewiring probability p:** Controls the amount of random rewiring.
+- **Average degree:** Compares overall network connectivity.
+- **Maximum degree:** Investigates differences in highly connected nodes.
+- **Network density:** Compares the proportion of existing connections.
+- **Average clustering coefficient:** Compares local clustering.
+- **Classic degree distribution:** Compares the number of nodes at each degree.
+- **Log-binned degree distribution:** Compares the shapes of the degree distributions.
+- **Influence of punctuation:** Compares real networks with and without punctuation
+  against one WS reference network.
+
+
+# Barabási–Albert (BA) Model
+
+- Designed to explain the emergence of scale-free networks.
+- Based on two mechanisms: network growth and preferential attachment.
+- New nodes are added to the network over time.
+- New nodes preferentially connect to existing nodes with higher degrees.
+- This mechanism is often described as "the rich get richer."
+- Serves as a reference model for studying hubs and heavy-tailed
+  degree distributions in word-adjacency networks.
+
+## How does the model work
+- The network begins with a small connected initial structure.
+- New nodes are added one at a time.
+- Each new node creates m connections to existing nodes.
+- Existing nodes are selected with probability proportional
+  to their current degree.
+- Highly connected nodes are therefore more likely to receive
+  additional connections.
+- The network grows until it reaches N nodes.
+- The resulting network is simple, undirected, and unweighted.
+
+### Parameters used in the application
+- **N:** Number of nodes in the selected real word-adjacency network.
+- **m:** Number of edges added by each new node.
+- **m:** Approximated from half the real network's average degree.
+- **Random seed:** Controls reproducibility of the generated network.
+- The BA model matches the real network's number of nodes.
+- Its number of edges may differ from the real network.
+
+## typical properties
+- **Degree distribution:** Heavy-tailed, with an asymptotic
+  power-law form.
+- **Theoretical exponent γ:** Approaches 3 in the standard BA model.
+- **Hubs:** A small number of nodes can acquire very high degrees.
+- **Average degree:** Approaches 2m as the network grows.
+- **Clustering coefficient:** Generally decreases with network size
+  in the standard BA model.
+- **Preferential attachment:** Produces unequal connectivity
+  because high-degree nodes attract more edges.
+- **Finite-size effects:** Estimated exponents and maximum degrees
+  may differ from theoretical asymptotic expectations.
+
+## I analyze
+- **Number of nodes:** Compares the sizes of the real and BA networks.
+- **Number of edges:** Compares their total numbers of connections.
+- **Parameter m:** Determines how many connections each new node creates.
+- **Average degree:** Compares overall network connectivity.
+- **Maximum degree:** Compares the presence and strength of hubs.
+- **Network density:** Measures the proportion of existing connections.
+- **Average clustering coefficient:** Compares local clustering.
+- **Classic degree distribution:** Compares node counts at each degree.
+- **Log-binned degree distribution:** Makes the heavy-tailed
+  structure easier to visualize.
+- **Estimated power-law exponent γ:** Measures the decay
+  of the fitted degree-distribution tail.
+- **Minimum degree kMin:** Identifies the beginning of the fitted tail.
+- **Tail nodes:** Counts nodes included in the power-law fit.
+- **KS distance:** Measures the discrepancy between the empirical
+  and fitted tail distributions.
+- **Influence of punctuation:** Compares real networks with and
+  without punctuation against one BA reference network.
+
+
+# Dorogovtsev–Goltsev–Mendes (DGM) Model
+
+## How does the model work
+- The network begins with a triangle containing three nodes
+  and three edges.
+- At each iteration, every existing edge is examined.
+- A new node is added for each existing edge.
+- Each new node connects to both endpoints of that edge.
+- The original edge remains in the network.
+- Every processed edge therefore forms a new triangle.
+- Only edges existing at the beginning of an iteration
+  are processed during that iteration.
+- The process is deterministic and produces the same
+  network for a given number of iterations.
+- The resulting network is simple, undirected, and unweighted.
+
+### Parameters used in the application
+- **Iterations:** Number of growth stages.
+- **N:** Number of nodes in the selected real network.
+- The application selects the iteration count that produces
+  the closest possible number of nodes to the real network.
+- The DGM model does not necessarily match the real network's
+  exact number of nodes or edges.
+- No random seed is needed for DGM generation.
+
+## typical properties
+- **Degree distribution:** Scale-free with discrete degree values.
+- **Theoretical exponent γ:** Approximately 2.585.
+- **Network growth:** The number of nodes and edges increases
+  exponentially with the number of iterations.
+- **Hubs:** Older nodes develop increasingly high degrees.
+- **Clustering coefficient:** High because new triangles
+  are created during every iteration.
+- **Average degree:** Approaches 4 as the network grows.
+- **Connectivity:** The network remains connected.
+- **Deterministic structure:** The same number of iterations
+  always produces the same network.
+
+### Theoretical relationships
+- **Number of nodes:** N(t) = (3^(t+1) + 3) / 2
+- **Number of edges:** E(t) = 3^(t+1)
+- **Maximum degree:** k_max(t) = 2^(t+1)
+- **Theoretical exponent:** γ = 1 + ln(3) / ln(2)
+- **Theoretical exponent:** γ ≈ 2.585
+
+## I analyze
+- **Number of iterations:** Identifies the selected DGM growth stage.
+- **Number of nodes:** Compares the sizes of real and DGM networks.
+- **Number of edges:** Compares their total numbers of connections.
+- **Average degree:** Compares overall connectivity.
+- **Maximum degree:** Compares the presence and size of hubs.
+- **Network density:** Measures the proportion of existing connections.
+- **Average clustering coefficient:** Compares local clustering.
+- **Classic degree distribution:** Compares node counts at each degree.
+- **Log-binned degree distribution:** Visualizes the overall
+  distribution across different degree scales.
+- **Estimated power-law exponent γ:** Describes the fitted
+  degree-distribution tail.
+- **Minimum degree kMin:** Identifies the beginning of the fitted tail.
+- **Tail nodes:** Counts nodes included in the power-law fit.
+- **KS distance:** Measures the discrepancy between the empirical
+  and fitted tail distributions.
+- **Influence of punctuation:** Compares real networks with and
+  without punctuation against one DGM reference network.
+
+
+# Holme–Kim (HK) Model
+
+## How does the model work
+- The network begins with a small initial structure.
+- New nodes are added one at a time.
+- Each new node creates m connections to existing nodes.
+- Preferential attachment favors existing nodes with higher degrees.
+- After a preferential attachment connection, the model can
+  attempt to connect the new node to a neighbor of that node.
+- This triad formation step occurs with probability p.
+- Triad formation encourages the creation of triangles.
+- The process continues until the network contains N nodes.
+- The resulting network is simple, undirected, and unweighted.
+
+### Parameters used in the application
+- **N:** Number of nodes in the selected real word-adjacency network.
+- **m:** Number of connections added by each new node.
+- **m:** Approximated from half the real network's average degree.
+- **p = 0.85:** Fixed triad formation probability.
+- **Random seed:** Controls reproducibility of the generated network.
+- The HK model matches the real network's number of nodes.
+- Its number of edges may differ from the real network.
+
+## typical properties
+- **Degree distribution:** Heavy-tailed, approximately scale-free.
+- **Theoretical exponent γ:** Approaches 3 asymptotically
+  in the standard Holme–Kim model.
+- **Hubs:** Preferential attachment produces highly connected nodes.
+- **Clustering coefficient:** Can be considerably higher
+  than in the standard Barabási–Albert model.
+- **Triangle formation:** Creates additional local connections
+  between nodes.
+- **Average degree:** Approximately 2m for large networks.
+- **Network density:** Generally decreases as the network grows.
+- **Finite-size effects:** Estimated exponents and clustering
+  may differ from theoretical expectations.
+
+### Effect of triad formation probability
+- **p = 0:** No triad formation; behavior resembles
+  the Barabási–Albert model.
+- **0 < p < 1:** A mixture of preferential attachment
+  and triangle formation.
+- **p = 1:** Triad formation is attempted whenever possible.
+- Higher p generally increases triangle formation and can
+  increase clustering, although the effect is not necessarily linear.
+
+## I analyze
+- **Number of nodes:** Compares the sizes of real and HK networks.
+- **Number of edges:** Compares their total numbers of connections.
+- **Parameter m:** Determines how many connections new nodes create.
+- **Triad formation probability p:** Controls triangle formation.
+- **Average degree:** Compares overall network connectivity.
+- **Maximum degree:** Compares the presence and strength of hubs.
+- **Network density:** Measures the proportion of existing connections.
+- **Average clustering coefficient:** Compares local clustering.
+- **Classic degree distribution:** Compares node counts at each degree.
+- **Log-binned degree distribution:** Visualizes heavy-tailed
+  connectivity across different degree scales.
+- **Estimated power-law exponent γ:** Describes the fitted
+  degree-distribution tail.
+- **Minimum degree kMin:** Identifies the beginning of the fitted tail.
+- **Tail nodes:** Counts nodes included in the power-law fit.
+- **KS distance:** Measures the discrepancy between the empirical
+  and fitted tail distributions.
+- **Influence of punctuation:** Compares real networks with
+  and without punctuation against one HK reference network.
