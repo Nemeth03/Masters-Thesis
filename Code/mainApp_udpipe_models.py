@@ -804,46 +804,6 @@ class App(wx.Frame):
         return centers[mask], density[mask]
 
     
-    # Calculate power-law statistics from the degree distribution
-    def calculatePowerLawStatistics(self, degrees):
-
-        # Group node degrees into logarithmic bins
-        binnedDegrees, binnedDensity = self.logBinDegrees(
-            degrees
-        )
-
-        # Select bins with positive degrees and probability densities
-        mask = (
-            (binnedDegrees > 0) &
-            (binnedDensity > 0)
-        )
-
-        # Extract valid degree values
-        x = binnedDegrees[mask]
-
-        # Extract corresponding probability densities
-        y = binnedDensity[mask]
-
-        # Require at least three valid points for regression
-        if len(x) < 3:
-            return None
-
-        # Fit a straight line to the log-log degree distribution
-        result = linregress(
-            np.log10(x),
-            np.log10(y)
-        )
-
-        # Return the estimated exponent and regression statistics
-        return {
-            'gamma': -result.slope,
-            'r2': result.rvalue ** 2,
-            'intercept': result.intercept,
-            'degrees': x,
-            'density': y
-        }
-    
-    
     # Generate the deterministic DGM network
     def generateDGM(self, iterations):
         # Start with a triangle
